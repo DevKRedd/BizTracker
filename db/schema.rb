@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_170956) do
+ActiveRecord::Schema.define(version: 2021_04_12_194905) do
+
+  create_table "kpi_data", force: :cascade do |t|
+    t.date "date"
+    t.string "kpi"
+    t.integer "data_point"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_kpi_data_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
@@ -20,8 +30,10 @@ ActiveRecord::Schema.define(version: 2021_04_06_170956) do
     t.string "first_name"
     t.string "last_name"
     t.string "company_name"
+    t.string "active_charts"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "kpi_data", "users"
 end

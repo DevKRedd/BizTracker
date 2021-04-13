@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2021-04-12
+  kpi: MyString
+  data_point: 1
+  user: one
+
+two:
+  date: 2021-04-12
+  kpi: MyString
+  data_point: 1
+  user: two
