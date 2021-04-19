@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_many :kpi_data
+    has_many :user_dashboards
 
     def pqlvr(curr_month, prev_month, year1, year2)
         curr_pql = self.kpi_data.find_all { |d| d.date.year == year1 && d.date.month == curr_month && d.kpi == 'Product Qualified Leads'}.map{ |kpi| kpi.data_point}.sum

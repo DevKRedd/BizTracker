@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dashboard_title: MyString
+  chart_type: MyString
+  uquarter_number: 1
+  user: one
+
+two:
+  dashboard_title: MyString
+  chart_type: MyString
+  uquarter_number: 1
+  user: two

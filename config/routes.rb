@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_dashboards
   resources :kpi_data
   namespace :api do
     namespace :v1 do

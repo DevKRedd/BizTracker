@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_12_194905) do
+ActiveRecord::Schema.define(version: 2021_04_19_162630) do
 
   create_table "kpi_data", force: :cascade do |t|
     t.date "date"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2021_04_12_194905) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_kpi_data_on_user_id"
+  end
+
+  create_table "user_dashboards", force: :cascade do |t|
+    t.string "dashboard_title"
+    t.string "chart_type"
+    t.integer "quarter_number"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_user_dashboards_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,4 +46,5 @@ ActiveRecord::Schema.define(version: 2021_04_12_194905) do
   end
 
   add_foreign_key "kpi_data", "users"
+  add_foreign_key "user_dashboards", "users"
 end

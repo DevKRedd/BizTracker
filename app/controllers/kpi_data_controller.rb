@@ -1,7 +1,7 @@
 class KpiDataController < ApplicationController
     def create
         # byebug
-        @kpi_data = KpiDatum.new(notebook_params)
+        @kpi_data = KpiDatum.new(kpi_data_params)
         @kpi_data.user = current_user
         @kpi_data.save
         render json: @kpi_data

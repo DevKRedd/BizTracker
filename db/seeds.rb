@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+UserDashboard.destroy_all
 KpiDatum.destroy_all
 User.destroy_all
 
@@ -21,5 +22,10 @@ KpiDatum.create(date: DateTime.new(2021,3,22), kpi: 'Total Users', data_point: 8
 KpiDatum.create(date: DateTime.new(2021,2,22), kpi: 'Total Users', data_point: 7800, user_id: User.all.first.id)
 KpiDatum.create(date: DateTime.new(2021,1,22), kpi: 'Total Users', data_point: 7600, user_id: User.all.first.id)
 KpiDatum.create(date: DateTime.new(2021,3,22), kpi: 'Deleted Accounts', data_point: 200, user_id: User.all.first.id)
+
+
+UserDashboard.create(dashboard_title: 'Total Users', chart_type: 'Bar', quarter_number: 1, user_id: User.all.first.id)
+
+
 
 
