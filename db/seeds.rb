@@ -12,6 +12,8 @@ User.destroy_all
 
 User.create(email: "that@that.com", password: "yesPass", bio: "Mine", avatar: "air bender", first_name: "Billy", last_name: "Joe", company_name: "Billy Joe Co", active_charts: "Monthly Unique Visitors, Sign Ups")
 
+User.create(email: "khalinredd@gmail.com", password: "khalinlight", bio: "Mine", avatar: "air bender", first_name: "Billy", last_name: "Joe", company_name: "Khalin Co", active_charts: "Monthly Unique Visitors, Sign Ups")
+
 
 KpiDatum.create(date: DateTime.new(2021,3,22), kpi: 'Monthly Unique Visitors', data_point: 2000, user_id: User.all.first.id)
 KpiDatum.create(date: DateTime.new(2021,3,22), kpi: 'Product Qualified Leads', data_point: 1000, user_id: User.all.first.id)
@@ -24,7 +26,10 @@ KpiDatum.create(date: DateTime.new(2021,1,22), kpi: 'Total Users', data_point: 7
 KpiDatum.create(date: DateTime.new(2021,3,22), kpi: 'Deleted Accounts', data_point: 200, user_id: User.all.first.id)
 
 
-UserDashboard.create(dashboard_title: 'Total Users', chart_type: 'Bar', quarter_number: 1, user_id: User.all.first.id)
+UserDashboard.create(dashboard_title: 'Total Users', chart_type: 'Bar', quarter_number: 1, user_id: User.all.first.id, year:2021)
+UserDashboard.create(dashboard_title: 'Monthly Unique Visitors', chart_type: 'Line', quarter_number: 2, user_id: User.all.first.id, year:2021)
+
+UserDashboard.create(dashboard_title: 'Monthly Unique Visitors', chart_type: 'Line', quarter_number: 2, user_id: User.all.last.id, year:2021)
 
 
 

@@ -1,4 +1,14 @@
 class UserDashboardsController < ApplicationController
+    
+
+    def my_dashboard
+        # byebug
+        # dashboard = UserDashboard.all.find(params["id"])
+        dashboard = UserDashboard.all.where({user_id: params["id"]})
+        
+            render json: dashboard
+    end
+
 
     def create
         # byebug
@@ -12,15 +22,16 @@ class UserDashboardsController < ApplicationController
     def update
 
         @user_dashboard = UserDashboard.find(params[:user_dashboard_id])
-        @user_dashboard.update(params[:user_dashboard_id])
+        @user_dashboard.update(dashboard_title: user_dashboard_params[:dashboard_title], chart_type: user_dashboard_params[:chart_type], quarter_number: user_dashboard_params[:quarter_number], year: user_dashboard_params[:year]) 
         
     end
 
     private
 
     def user_dashboard_params
-        params.require(:kpi_data).permit(:dashboard_title, :chart_type, :quarter_number)
+        params.require(:user_dashboards).permit(:dashboard_title, :chart_type, :quarter_number, :user_id, :year)
     end
+
 
 
 end

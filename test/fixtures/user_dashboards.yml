@@ -3,11 +3,11 @@
 one:
   dashboard_title: MyString
   chart_type: MyString
-  uquarter_number: 1
+  quarter_number: 1
   user: one
 
 two:
   dashboard_title: MyString
   chart_type: MyString
-  uquarter_number: 1
+  quarter_number: 1
   user: two

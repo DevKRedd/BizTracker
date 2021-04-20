@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_19_162630) do
+ActiveRecord::Schema.define(version: 2021_04_20_181337) do
 
   create_table "kpi_data", force: :cascade do |t|
     t.date "date"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_04_19_162630) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "year"
     t.index ["user_id"], name: "index_user_dashboards_on_user_id"
   end
 

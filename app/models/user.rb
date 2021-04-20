@@ -49,31 +49,42 @@ class User < ApplicationRecord
     end
     def quarter_2(year, kpi)
 
-        jan_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 4 && d.kpi == kpi}.map{ |d| d.data_point}.sum
-        feb_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 5 && d.kpi == kpi}.map{ |d| d.data_point}.sum
-        mar_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 6 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        apr_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 4 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        may_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 5 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        jun_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 6 && d.kpi == kpi}.map{ |d| d.data_point}.sum
 
-        q2 = [{"title": "Apr", "data_point": jan_data}, {"title": "May", "data_point": feb_data}, {"title": "Jun", "data_point": mar_data}]
+        q2 = [{"title": "Apr", "data_point": apr_data}, {"title": "May", "data_point": may_data}, {"title": "Jun", "data_point": jun_data}]
         return {"title": kpi, "data" => q2}
 
     end
     def quarter_3(year, kpi)
 
-        jan_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 7 && d.kpi == kpi}.map{ |d| d.data_point}.sum
-        feb_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 8 && d.kpi == kpi}.map{ |d| d.data_point}.sum
-        mar_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 9 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        jul_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 7 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        aug_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 8 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        sep_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 9 && d.kpi == kpi}.map{ |d| d.data_point}.sum
 
-        q3 = [{"title": "Jul", "data_point": jan_data}, {"title": "Aug", "data_point": feb_data}, {"title": "Sep", "data_point": mar_data}]
+        q3 = [{"title": "Jul", "data_point": jul_data}, {"title": "Aug", "data_point": aug_data}, {"title": "Sep", "data_point": sep_data}]
         return {"title": kpi, "data" => q3}
 
     end
     def quarter_4(year, kpi)
 
-        jan_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 10 && d.kpi == kpi}.map{ |d| d.data_point}.sum
-        feb_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 11 && d.kpi == kpi}.map{ |d| d.data_point}.sum
-        mar_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 12 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        oct_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 10 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        nov_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 11 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        dec_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 12 && d.kpi == kpi}.map{ |d| d.data_point}.sum
 
-        q4 = [{"title": "Oct", "data_point": jan_data}, {"title": "Nov", "data_point": feb_data}, {"title": "Dec", "data_point": mar_data}]
+        q4 = [{"title": "Oct", "data_point": oct_data}, {"title": "Nov", "data_point": nov_data}, {"title": "Dec", "data_point": dec_data}]
+        return {"title": kpi, "data" => q4}
+
+    end
+    
+    def quarter_4(year, kpi)
+
+        oct_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 10 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        nov_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 11 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+        dec_data = self.kpi_data.find_all { |d| d.date.year == year && d.date.month == 12 && d.kpi == kpi}.map{ |d| d.data_point}.sum
+
+        q4 = [{"title": "Oct", "data_point": oct_data}, {"title": "Nov", "data_point": nov_data}, {"title": "Dec", "data_point": dec_data}]
         return {"title": kpi, "data" => q4}
 
     end

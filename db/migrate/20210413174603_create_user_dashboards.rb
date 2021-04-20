@@ -3,7 +3,7 @@ class CreateUserDashboards < ActiveRecord::Migration[6.1]
     create_table :user_dashboards do |t|
       t.string :dashboard_title
       t.string :chart_type
-      t.integer :uquarter_number
+      t.integer :quarter_number
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
