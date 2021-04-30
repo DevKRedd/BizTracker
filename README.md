@@ -1,5 +1,3 @@
-# README
-
 # BizTracker is a KPI tracking dashboard for SAAS companies.
 
 # Presentation
